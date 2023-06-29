@@ -10,6 +10,8 @@
     "@types/node": "^16.18.23",
     "@types/react": "^18.0.34",
     "@types/react-dom": "^18.0.11",
+    "conventional-changelog": "^4.0.0",
+    "conventional-changelog-cli": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -20,7 +22,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install",
+    "commit": "git add . && cz-customizable",
+    "changelog": "conventional-changelog -p cz-config.js -i CHANGELOG.md -s -r 0"
   },
   "eslintConfig": {
     "extends": [
@@ -41,7 +46,14 @@
     ]
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0"
+    "@commitlint/config-conventional": "^17.6.6",
+    "commitizen": "^4.3.0",
+    "commitlint": "^17.6.6",
+    "commitlint-config-cz": "^0.13.3",
+    "commitlint-config-git-commit-emoji": "^1.0.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
+    "husky": "^8.0.3"
   },
   "config": {
     "commitizen": {
